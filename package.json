@@ -1,41 +1,35 @@
 {
-  "name": "user-departments-practice",
+  "name": "acmeMan",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "dependencies": {
     "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "express": "^4.16.3",
-    "faker": "^4.1.0",
-    "nodemon": "^1.18.4",
-    "pg": "^7.4.3",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.0",
-    "redux-logger": "^3.0.6",
-    "sequelize": "^4.38.0",
-    "webpack": "^4.16.5",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0"
   },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
-    ]
-  },
-  "devDependencies": {},
   "scripts": {
     "postinstall": "npm run webpack",
-    "webpack": "./node_modules/webpack/bin/webpack.js",
-    "start:dev": "npm run webpack -- --watch --mode=development & DATABASE_URL=postgres://localhost/products nodemon app.js --ignore src/ --ignore dist",
-    "start": "node app.js"
+    "start-dev":"DATABASE_URL=postgres://localhost/acme node app.js",
+    "start": "node app.js",
+    "webpack": "./node_modules/webpack/bin/webpack.js"
   },
   "keywords": [],
   "author": "",
