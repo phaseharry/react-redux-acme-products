@@ -1,16 +1,16 @@
 const express = require('express');
 const path = require('path')
-const routes = require('./Routes/index');
+const routes = require('./Routes');
 const { syncAndSeed } = require('./db/Product')
 
 const app = express();
 
 app.use(express.json())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use('/public', express.static(path.join(__dirname, 'public')))
 app.use('/api', routes);
 
 app.get('/', (req, res, next) => {
-    res.sendFile(path.join(__dirname, 'public/index.html'))
+    res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
 const init = () => {
@@ -20,4 +20,5 @@ const init = () => {
 init();
 
 const port = process.env.PORT || 3000
+
 app.listen(port, () => console.log(`listening on port ${port}`))

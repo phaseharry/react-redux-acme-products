@@ -2,7 +2,7 @@
   "name": "user-departments-practice",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
@@ -33,7 +33,6 @@
   "devDependencies": {},
   "scripts": {
     "postinstall": "npm run webpack",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "./node_modules/webpack/bin/webpack.js",
     "start:dev": "npm run webpack -- --watch --mode=development & DATABASE_URL=postgres://localhost/products nodemon app.js --ignore src/ --ignore dist",
     "start": "node app.js"
