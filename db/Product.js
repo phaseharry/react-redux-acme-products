@@ -13,7 +13,7 @@ const Product = connection.define('product', {
 })
 
 const syncAndSeed = () => {
-    connection.sync()
+    connection.sync({force: true})
     .then(() => {
         Promise.all([
             Product.create({ name : faker.commerce.product()}),

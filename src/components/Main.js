@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, HashRouter } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import axios from 'axios'
 import NavBar from './NavBar'
 import ProductList from './ProductList'
