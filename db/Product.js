@@ -16,11 +16,11 @@ const syncAndSeed = () => {
     connection.sync({force: true})
     .then(() => {
         Promise.all([
-            Product.create({ name : faker.commerce.product()}),
-            Product.create({ name : faker.commerce.product()}),
-            Product.create({ name : faker.commerce.product()}),
-            Product.create({ name : faker.commerce.product()}),
-            Product.create({ name : faker.commerce.product()})
+            Product.create({ name : faker.commerce.productName(), rating: 6}),
+            Product.create({ name : faker.commerce.productName(), rating: 9}),
+            Product.create({ name : faker.commerce.productName(), rating: 4}),
+            Product.create({ name : faker.commerce.productName(), rating: 10}),
+            Product.create({ name : faker.commerce.productName(), rating: 6})
         ]).then(() => console.log('synced and seeded (HOPEFULLY!)'))
     }).catch((error) => console.log(error))
 }

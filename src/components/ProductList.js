@@ -1,11 +1,15 @@
 import React from 'react';
+import Product from './Product';
 
 const ProductList = props => {
-    const {products} = props
+    const {products, deleteProduct, newProduct} = props
     return (
-        <ul>
-            {products.map((product) => <li>{product.name}</li>)}
-        </ul>
+        <div>
+            <button onClick={newProduct}>Create Product</button>
+            <ul>
+                {products.map((product) => <Product name={product.name} key={product.id} deleteProduct={deleteProduct} id={product.id}/>)}
+            </ul>
+        </div>
     )
 }
 

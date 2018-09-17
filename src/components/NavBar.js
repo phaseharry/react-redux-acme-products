@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom'
 
 const NavBar = props => {
     return (
-        <div>
-            <Link to='/users'>Products {props.products.length}</Link>
-            {/* <Link>Top Rated</Link> */}
-        </div>
+        <ul>
+            <li><Link to='/products'>Products {props.products.length}</Link></li>
+            <li><Link to={`/products/${props.topRated.id}`}>Top Rated ({props.topRated.name})</Link></li>
+        </ul>
     )
 }
 

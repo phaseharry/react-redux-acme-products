@@ -17,7 +17,7 @@ route.post('/products', (req, res, next) => {
 route.delete('/products/:id', (req, res, next) => {
     Product.findById(req.params.id)
     .then((product) => product.destroy()
-    .then(() => res.sendState(204)))
+    .then(() => res.sendStatus(204)))
     .catch((error) => next(error));
 })
 
